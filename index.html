@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakarsh's Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #0a192f;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #112240;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        nav.light-mode {
+            background: #20549d;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #64ffda;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #64ffda;
+        }
+
+        nav.light-mode ul li a {
+            color: #333;
+        }
+
+        nav.light-mode ul li a:hover {
+            color: #64ffda;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 80px 10%;
+        }
+
+        .hero .left {
+            width: 50%;
+            animation: fadeIn 2s;
+        }
+
+        .hero .left h1 {
+            font-size: 2.5rem;
+            color: #64ffda;
+        }
+
+        .hero .left p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #a8b2d1;
+        }
+
+        .hero .right img {
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(100, 255, 218, 0.2);
+            transition: 0.3s ease-in-out;
+            border: 5px solid #64ffda;
+            padding: 10px;
+            background-color: #112240;
+        }
+
+        .hero .right img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #64ffda;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #a8b2d1;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #112240;
+            padding: 60px 10%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(100, 255, 218, 0.2);
+        }
+
+        #contact p {
+            margin: 10px 0;
+        }
+
+        #contact a {
+            color: #64ffda;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s ease-in-out;
+        }
+
+        #contact a:hover {
+            color: #a8b2d1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #112240;
+            color: #a8b2d1;
+        }
+
+        section ul li a {
+            text-align: center;
+            color: rgb(95, 156, 197);
+        }
+
+        /* Light Mode Styles */
+        body.light-mode .hero .left h1,
+        body.light-mode .section h2 {
+            color: #333;
+        }
+
+        body.light-mode .hero .left p,
+        body.light-mode .section p {
+            color: #555;
+        }
+
+        body.light-mode .hero .right img {
+            background-color: #f6f0f0;
+        }
+
+        body.light-mode footer {
+            background: #ffffff;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Prakarsh's Portfolio</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+        </ul>
+        <button id="theme-toggle">Toggle Night Mode</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="left">
+            <h1>Hi, I'm Prakarsh Srivastava</h1>
+            <p>A passionate <span id="animated-text"></span></p>
+        </div>
+        <div class="right">
+            <img src="Prakarsh srivastava.jpg" alt="Profile Picture">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hi I am Prakarsh Srivastava Currently purusing Bca (Ds+Ai) from Shri Ramswaroop Memorial University,Barabanki</p>
+        <li>I Completed my High school and intermediate education from St anthony public school,Lucknow</li>
+        <li>So i have interest in Computer Science in childhood</li>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2>What I Do</h2>
+        <p>So i am good in website design , video editting, full stack developer</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <p>Here are some of my latest projects.</p>
+        <ul>
+            <li>Zomato Clone Website: Developed a fully responsive website mimicking Zomato's design and core functionalities using HTML, CSS, and JavaScript.</li>
+            <li>Python and C Programming Projects: Built multiple Python projects demonstrating expertise in Object-Oriented Programming (OOP). Completed various C programming projects with a focus on algorithms and problem-solving.</li>
+            <li>Full Stack Development for SR Technical (UAE-based Company): Successfully delivered a full-stack project tailored to client specifications. Ensured high-quality results by adhering to timelines and best practices.</li>
+            <li>Personal Portfolio Website (In Progress): Currently developing a portfolio website to showcase professional skills, certifications, and projects.</li>
+        </ul>
+    </section>
+    <section id="certificates" class="section">
+        <h2>Certificates</h2>
+        <p>Here are some of my certifications:</p>
+        <ul>
+            <li>Lets Upgrade: <a href="dev (2).pdf">JavaScript Bootcamp</a>, <a href="dev (3).pdf">Python Bootcamp</a></li>
+            <li>IBM Skill Build: <a href="ibm.png">Python in Data Science</a></li>
+            <li>Devtown: <a href="dev (1).pdf">Full Stack Course</a></li>
+            <li>Udemy: <a href="link_to_certificate">Full Stack Course</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:prakarshsrivastava444@gmail.com">prakarshsrivastava444@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/prakarsh-srivastava-66b38a31b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOYcpGBtdQ7GXOqu293ghjA%3D%3D">Prakarsh Srivastava</a></p>
+        <p>GitHub: <a href="https://github.com/prakarsh-create">prakarsh-create</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Prakarsh Srivastava | All Rights Reserved</p>
+    </footer>
+
+    <!-- Typed.js Animation -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#animated-text', {
+            strings: ['Web Developer', 'Video Editor', 'Full-Stack Engineer'],
+            typeSpeed: 50,
+            loop: true,
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('nav').classList.toggle('light-mode');
+        });
+    </script>
+
+</body>
+</html>
